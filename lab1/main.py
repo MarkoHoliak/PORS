@@ -28,10 +28,11 @@ def bubble_sort(arr):
                 swapped = True
         if not swapped:
             break
+    return arr
 
 
 def sort_in_thread(arr):
-    bubble_sort(arr)
+    arr[:] = bubble_sort(arr)
 
 
 def main():
@@ -50,8 +51,8 @@ def main():
     numbers_thread_l = numbers_read_l.copy()
 
     start_time = time.time()
-    bubble_sort(numbers_read_s)
-    bubble_sort(numbers_read_l)
+    numbers_read_s = bubble_sort(numbers_read_s)
+    numbers_read_l = bubble_sort(numbers_read_l)
     end_time = time.time()
 
     thread_s = threading.Thread(target=sort_in_thread, args=(numbers_thread_s,))
@@ -71,6 +72,8 @@ def main():
     print(f"Час виконання з використанням двох потоків: {execution_time_thread:.4f} секунд")
     print(f"Час виконання з використанням одного потоку: {execution_time:.4f} секунд")
 
+    print(numbers_read_s)
+    print(numbers_thread_s)
 
 if __name__ == "__main__":
     main()
