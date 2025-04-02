@@ -65,5 +65,5 @@ app.delete("/applicants/:id", (req, res) => {
   res.json({ message: "Абітурієнта видалено" });
 });
 
-const PORT = 3001;
+const PORT = 3009;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

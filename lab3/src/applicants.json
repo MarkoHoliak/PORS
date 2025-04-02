@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "1742994322001",
+    "name": "Петро Петренко",
+    "faculty": "Факультет комп'ютерних наук",
+    "scores": {
+      "subjects": [
+        {
+          "name": "Математика",
+          "score": 100
+        },
+        {
+          "name": "Українська мова",
+          "score": 90
+        }
+      ],
+      "certificate": 80
+    },
+    "totalScore": 270,
+    "enrolled": true
+  },
+  {
+    "id": "1742994406939",
+    "name": "вітько Петренко",
+    "faculty": "Факультет комп'ютерних наук",
+    "scores": {
+      "subjects": [
+        {
+          "name": "Математика",
+          "score": 1
+        },
+        {
+          "name": "Українська мова",
+          "score": 2
+        }
+      ],
+      "certificate": 80
+    },
+    "totalScore": 83,
+    "enrolled": false
+  }
+]

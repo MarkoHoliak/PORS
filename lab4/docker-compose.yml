@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  applicant-service:
+    build: ./applicant-service
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+    volumes:
+      - ./applicant-service/applicants.json:/app/applicants.json
+
+  scores-service:
+    build: ./scores-service
+    ports:
+      - "3002:3002"
+    networks:
+      - app-network
+    depends_on:
+      - applicant-service
+
+  enrollment-service:
+    build: ./enrollment-service
+    ports:
+      - "3003:3003"
+    networks:
+      - app-network
+    depends_on:
+      - applicant-service
+      - scores-service
+
+networks:
+  app-network:
